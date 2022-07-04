@@ -1,0 +1,12 @@
+---
+import Mirador from "../components/Mirador";
+
+const manifest = "https://karenandscott.github.io/annonatate/manifests/iiif/dc/manifest.json";
+
+---
+
+<html>
+    <body>
+        <Mirador client:only="react" loadedManifest={manifest} />
+    </body>
+</html>
