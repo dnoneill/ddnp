@@ -81,14 +81,14 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Header() {
+export default function Nav() {
   return (
-    <Popover className="relative bg-white">
+    <Popover className="relative bg-white z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:flex-1">
             <a href="#">
-              <h1 className="font-">Digital Dickens Notes Project</h1>
+              <h1 className="text-xl text-ddnpblue">DDNP</h1>
             </a>
           </div>
           <div className="-mr-2 -my-2 md:hidden">
