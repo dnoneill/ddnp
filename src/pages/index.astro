@@ -5,10 +5,6 @@ import Hero from '../components/Hero.astro';
 import MainHead from '../components/MainHead.astro';
 import Nav from '../components/Nav';
 
-// Data Fetching: List all Markdown posts in the repo.
-const projects = await Astro.glob('./project/**/*.md');
-const featuredProject = projects[0];
-
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
 ---

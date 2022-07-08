@@ -52,7 +52,7 @@ const books = [
   {
     name: 'David Copperfield',
     description: '',
-    href: '#',
+    href: '/notes/david-copperfield',
     icon: BookOpenIcon,
   },
   {
@@ -87,7 +87,7 @@ export default function Nav() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:flex-1">
-            <a href="#">
+            <a href="/">
               <h1 className="text-xl text-ddnpblue">DDNP</h1>
             </a>
           </div>
