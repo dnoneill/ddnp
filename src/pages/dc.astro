@@ -1,12 +1,18 @@
 ---
 import Mirador from "../components/Mirador";
+import Nav from "../components/Nav";
 
 const manifest = "https://karenandscott.github.io/annonatate/manifests/iiif/dc/manifest.json";
 
 ---
 
-<html>
-    <body>
+<html class="h-full">
+
+<body class="h-full">
+    <Nav client:load />
+    <div class="relative h-3/4">
         <Mirador client:only="react" loadedManifest={manifest} />
-    </body>
+    </div>
+</body>
+
 </html>
