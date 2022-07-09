@@ -11,8 +11,8 @@ import {
   InformationCircleIcon,
   AcademicCapIcon,
   FolderIcon
-} from '@heroicons/react/outline'
-import { ChevronDownIcon } from '@heroicons/react/solid'
+} from '@heroicons/react/outline/index.js'
+import { ChevronDownIcon } from '@heroicons/react/solid/index.js'
 
 const introductionOptions = [
   {

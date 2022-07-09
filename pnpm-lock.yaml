@@ -11,28 +11,24 @@ specifiers:
   astro: ^1.0.0-beta.63
   mirador: ^3.3.0
   mirador-annotations: ^0.5.0
-  outline: link:@headlessui/react/outline
   preact: ^10.7.3
   react: ^18.0.0
   react-dom: ^18.0.0
   sass: ^1.52.2
-  solid: link:@headlessui/react/solid
   tailwindcss: ^3.1.4
 
 dependencies:
   '@headlessui/react': 1.6.5_biqbaboplfbrettd7655fr4n2y
-  '@heroicons/react': 1.0.6_react@18.2.0
   mirador: 3.3.0_ow6hrqlaxomiszs4hhcd2nc5pq
   mirador-annotations: 0.5.0_ortbdhnq2a5oot445vti6odfte
-  outline: link:@headlessui/react/outline
   preact: 10.8.2
-  solid: link:@headlessui/react/solid
 
 devDependencies:
   '@astrojs/preact': 0.3.1_zovicw5hrcrgb3nz2xoc225r6q
   '@astrojs/react': 0.2.0_beenoklgwfttvph5dgxj7na7aq
   '@astrojs/tailwind': 0.2.2
   '@babel/core': 7.18.6
+  '@heroicons/react': 1.0.6_react@18.2.0
   '@tailwindcss/typography': 0.5.2_tailwindcss@3.1.4
   astro: 1.0.0-beta.63_sass@1.53.0
   react: 18.2.0
@@ -487,7 +483,7 @@ packages:
       react: '>= 16'
     dependencies:
       react: 18.2.0
-    dev: false
+    dev: true
 
   /@icons/material/0.2.4_react@18.2.0:
     resolution: {integrity: sha512-QPcGmICAPbGLGb6F/yNf/KzKqvFx8z5qx3D1yFqVAjoFmXK35EgyW+cJ57Te3CNsmzblwtzakLGFqHPqrfb4Tw==}
