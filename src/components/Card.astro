@@ -1,0 +1,11 @@
+---
+const { title, description, href, img, alt } = Astro.props;
+---
+
+<a href={href} class="flex flex-col items-center bg-ddnpgreen rounded-sm border shadow-md md:flex-row md:max-w-xl hover:bg-ddnpgreen/75">
+    <img class="object-cover w-full h-96 md:h-auto md:w-48" src={img} alt={alt}>
+    <div class="flex flex-col justify-between p-4 leading-normal">
+        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{title}</h5>
+        <p class="mb-3 font-normal text-gray-700">{description}</p>
+    </div>
+</a>
