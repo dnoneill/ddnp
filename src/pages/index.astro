@@ -33,7 +33,7 @@ const novels = [
 <body class="container mx-auto">
 	<Nav client:only="react" />
 	<Hero />
-	<section class="mt-12 mx-6 flex flex-wrap justify-between gap-4">
+	<section class="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4 space-between">
 		{novels.map((novel, index) => (
 		<Card key={index} title={novel.title} description={novel.description} href={novel.href} img={novel.img} alt={novel.alt} />
 		))}
