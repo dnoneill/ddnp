@@ -9,7 +9,7 @@ import Card from '../components/Card.astro';
 const novels = [
 	{
 		title: 'Bleak House',
-		description: 'Bleak House is a novel by Charles Dickens. It was first published in 1853.',
+		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ultricies, felis vitae iaculis sagittis, dui metus molestie arcu, id gravida nisi ipsum eget nisl. Morbi tristique auctor augue nec scelerisque.',
 		href: '/notes/david-copperfield',
 		img: 'https://static.wixstatic.com/media/f5aeee_b118ae7e6ea344f2aeaeb4139b477eca~mv2.png/v1/fill/w_772,h_600,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/f4FE0G5c.png',
 		alt: 'Bleak House',
@@ -27,7 +27,8 @@ const novels = [
 <html lang="en">
 
 <head>
-	<MainHead title="Digital Dickens Notes Project" description="The Digital Dickens Notes Project is an exploration of Dickens's working notes" />
+	<MainHead title="Digital Dickens Notes Project"
+		description="The Digital Dickens Notes Project is an exploration of Dickens's working notes" />
 </head>
 
 <body class="container mx-auto">
@@ -35,7 +36,8 @@ const novels = [
 	<Hero />
 	<section class="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4 space-between">
 		{novels.map((novel, index) => (
-		<Card key={index} title={novel.title} description={novel.description} href={novel.href} img={novel.img} alt={novel.alt} />
+		<Card key={index} title={novel.title} description={novel.description} href={novel.href} img={novel.img}
+			alt={novel.alt} />
 		))}
 	</section>
 	<Footer />

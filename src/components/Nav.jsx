@@ -18,7 +18,7 @@ const introductionOptions = [
   {
     name: 'General Introduction',
     description: '',
-    href: '#',
+    href: '/introduction/general',
     icon: BookOpenIcon,
   },
   {
