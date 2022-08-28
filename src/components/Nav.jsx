@@ -1,7 +1,7 @@
 // Example built from HeadlessUI
 
-import { Fragment } from 'react'
-import { Popover, Transition } from '@headlessui/react'
+import { Fragment } from "react";
+import { Popover, Transition } from "@headlessui/react";
 import {
   PencilIcon,
   MenuIcon,
@@ -10,75 +10,78 @@ import {
   GlobeIcon,
   InformationCircleIcon,
   AcademicCapIcon,
-  FolderIcon
-} from '@heroicons/react/outline/index.js'
-import { ChevronDownIcon } from '@heroicons/react/solid/index.js'
+  FolderIcon,
+} from "@heroicons/react/outline/index.js";
+import { ChevronDownIcon } from "@heroicons/react/solid/index.js";
+
+// import Logo from "../images/logos/DDNP.svg";
+import Logo from "../images/logos/DickensNotesSide.svg";
 
 const introductionOptions = [
   {
-    name: 'General Introduction',
-    description: '',
-    href: '/introduction/general',
+    name: "General Introduction",
+    description: "",
+    href: "/introduction/general",
     icon: BookOpenIcon,
   },
   {
-    name: 'Scholarly Introduction',
-    description: '',
-    href: '#',
+    name: "Scholarly Introduction",
+    description: "",
+    href: "#",
     icon: AcademicCapIcon,
   },
-]
+];
 const aboutOptions = [
   {
-    name: 'The Team',
-    description: '',
-    href: '#',
+    name: "The Team",
+    description: "",
+    href: "#",
     icon: GlobeIcon,
   },
   {
-    name: 'Editing the Notes',
-    description: '',
-    href: '#',
+    name: "Editing the Notes",
+    description: "",
+    href: "#",
     icon: PencilIcon,
   },
   {
-    name: 'Colophon/Technical',
-    description: '',
-    href: '#',
+    name: "Colophon/Technical",
+    description: "",
+    href: "#",
     icon: InformationCircleIcon,
   },
-]
+];
 const books = [
   {
-    name: 'David Copperfield',
-    description: '',
-    href: '/notes/david-copperfield',
+    name: "David Copperfield",
+    description: "",
+    href: "/notes/david-copperfield",
     icon: BookOpenIcon,
   },
   {
-    name: 'Bleak House',
-    description: '',
-    href: '#',
+    name: "Bleak House",
+    description: "",
+    href: "#",
     icon: BookOpenIcon,
   },
-]
+];
 
 const instructionOptions = [
   {
-    name: 'User Guide',
+    name: "User Guide",
     description: "Learn how to use the DDNP to explore Dicken's working notes",
-    href: '#',
+    href: "#",
     icon: FolderIcon,
   },
   {
-    name: 'Teaching with the DDNP',
-    description: 'Learn to incorporate the DDNP into your teaching process',
-    href: '#',
+    name: "Teaching with the DDNP",
+    description: "Learn to incorporate the DDNP into your teaching process",
+    href: "#",
     icon: AcademicCapIcon,
   },
-]
+];
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 
 export default function Nav() {
@@ -88,7 +91,8 @@ export default function Nav() {
         <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 lg:justify-start lg:space-x-10">
           <div className="flex justify-start lg:flex-1">
             <a href="/">
-              <h1 className="text-2xl text-ddnpblue">DDNP</h1>
+              {/* <h1 className="text-2xl text-ddnpblue">DDNP</h1> */}
+              <img src={Logo} alt="Project logo" />
             </a>
           </div>
           <div className="-mr-2 -my-2 lg:hidden">
@@ -103,15 +107,15 @@ export default function Nav() {
                 <>
                   <Popover.Button
                     className={classNames(
-                      open ? 'text-gray-900' : 'text-gray-500',
-                      'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ddnpblue'
+                      open ? "text-gray-900" : "text-gray-500",
+                      "group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ddnpblue"
                     )}
                   >
                     <span>Introduction</span>
                     <ChevronDownIcon
                       className={classNames(
-                        open ? 'text-gray-600' : 'text-gray-400',
-                        'ml-2 h-5 w-5 group-hover:text-gray-500'
+                        open ? "text-gray-600" : "text-gray-400",
+                        "ml-2 h-5 w-5 group-hover:text-gray-500"
                       )}
                       aria-hidden="true"
                     />
@@ -135,10 +139,17 @@ export default function Nav() {
                               href={item.href}
                               className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"
                             >
-                              <item.icon className="flex-shrink-0 h-6 w-6 text-ddnpblue" aria-hidden="true" />
+                              <item.icon
+                                className="flex-shrink-0 h-6 w-6 text-ddnpblue"
+                                aria-hidden="true"
+                              />
                               <div className="ml-4">
-                                <p className="text-base font-medium text-gray-900">{item.name}</p>
-                                <p className="mt-1 text-sm text-gray-500">{item.description}</p>
+                                <p className="text-base font-medium text-gray-900">
+                                  {item.name}
+                                </p>
+                                <p className="mt-1 text-sm text-gray-500">
+                                  {item.description}
+                                </p>
                               </div>
                             </a>
                           ))}
@@ -155,15 +166,15 @@ export default function Nav() {
                 <>
                   <Popover.Button
                     className={classNames(
-                      open ? 'text-gray-900' : 'text-gray-500',
-                      'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ddnpblue'
+                      open ? "text-gray-900" : "text-gray-500",
+                      "group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ddnpblue"
                     )}
                   >
                     <span>Using the DDNP</span>
                     <ChevronDownIcon
                       className={classNames(
-                        open ? 'text-gray-600' : 'text-gray-400',
-                        'ml-2 h-5 w-5 group-hover:text-gray-500'
+                        open ? "text-gray-600" : "text-gray-400",
+                        "ml-2 h-5 w-5 group-hover:text-gray-500"
                       )}
                       aria-hidden="true"
                     />
@@ -187,10 +198,17 @@ export default function Nav() {
                               href={item.href}
                               className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"
                             >
-                              <item.icon className="flex-shrink-0 h-6 w-6 text-ddnpblue" aria-hidden="true" />
+                              <item.icon
+                                className="flex-shrink-0 h-6 w-6 text-ddnpblue"
+                                aria-hidden="true"
+                              />
                               <div className="ml-4">
-                                <p className="text-base font-medium text-gray-900">{item.name}</p>
-                                <p className="mt-1 text-sm text-gray-500">{item.description}</p>
+                                <p className="text-base font-medium text-gray-900">
+                                  {item.name}
+                                </p>
+                                <p className="mt-1 text-sm text-gray-500">
+                                  {item.description}
+                                </p>
                               </div>
                             </a>
                           ))}
@@ -207,15 +225,15 @@ export default function Nav() {
                 <>
                   <Popover.Button
                     className={classNames(
-                      open ? 'text-gray-900' : 'text-gray-500',
-                      'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ddnpblue'
+                      open ? "text-gray-900" : "text-gray-500",
+                      "group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ddnpblue"
                     )}
                   >
                     <span>The Working Notes</span>
                     <ChevronDownIcon
                       className={classNames(
-                        open ? 'text-gray-600' : 'text-gray-400',
-                        'ml-2 h-5 w-5 group-hover:text-gray-500'
+                        open ? "text-gray-600" : "text-gray-400",
+                        "ml-2 h-5 w-5 group-hover:text-gray-500"
                       )}
                       aria-hidden="true"
                     />
@@ -239,10 +257,17 @@ export default function Nav() {
                               href={item.href}
                               className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"
                             >
-                              <item.icon className="flex-shrink-0 h-6 w-6 text-ddnpblue" aria-hidden="true" />
+                              <item.icon
+                                className="flex-shrink-0 h-6 w-6 text-ddnpblue"
+                                aria-hidden="true"
+                              />
                               <div className="ml-4">
-                                <p className="text-base font-medium text-gray-900">{item.name}</p>
-                                <p className="mt-1 text-sm text-gray-500">{item.description}</p>
+                                <p className="text-base font-medium text-gray-900">
+                                  {item.name}
+                                </p>
+                                <p className="mt-1 text-sm text-gray-500">
+                                  {item.description}
+                                </p>
                               </div>
                             </a>
                           ))}
@@ -259,15 +284,15 @@ export default function Nav() {
                 <>
                   <Popover.Button
                     className={classNames(
-                      open ? 'text-gray-900' : 'text-gray-500',
-                      'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ddnpblue'
+                      open ? "text-gray-900" : "text-gray-500",
+                      "group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ddnpblue"
                     )}
                   >
                     <span>About the Project</span>
                     <ChevronDownIcon
                       className={classNames(
-                        open ? 'text-gray-600' : 'text-gray-400',
-                        'ml-2 h-5 w-5 group-hover:text-gray-500'
+                        open ? "text-gray-600" : "text-gray-400",
+                        "ml-2 h-5 w-5 group-hover:text-gray-500"
                       )}
                       aria-hidden="true"
                     />
@@ -291,10 +316,17 @@ export default function Nav() {
                               href={item.href}
                               className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"
                             >
-                              <item.icon className="flex-shrink-0 h-6 w-6 text-ddnpblue" aria-hidden="true" />
+                              <item.icon
+                                className="flex-shrink-0 h-6 w-6 text-ddnpblue"
+                                aria-hidden="true"
+                              />
                               <div className="ml-4">
-                                <p className="text-base font-medium text-gray-900">{item.name}</p>
-                                <p className="mt-1 text-sm text-gray-500">{item.description}</p>
+                                <p className="text-base font-medium text-gray-900">
+                                  {item.name}
+                                </p>
+                                <p className="mt-1 text-sm text-gray-500">
+                                  {item.description}
+                                </p>
                               </div>
                             </a>
                           ))}
@@ -318,7 +350,10 @@ export default function Nav() {
         leaveFrom="opacity-100 scale-100"
         leaveTo="opacity-0 scale-95"
       >
-        <Popover.Panel focus className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right lg:hidden">
+        <Popover.Panel
+          focus
+          className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right lg:hidden"
+        >
           <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
             <div className="pt-5 pb-6 px-5">
               <div className="flex items-center justify-between">
@@ -344,8 +379,13 @@ export default function Nav() {
                       href={item.href}
                       className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
                     >
-                      <item.icon className="flex-shrink-0 h-6 w-6 text-ddnpblue" aria-hidden="true" />
-                      <span className="ml-3 text-base font-medium text-gray-900">{item.name}</span>
+                      <item.icon
+                        className="flex-shrink-0 h-6 w-6 text-ddnpblue"
+                        aria-hidden="true"
+                      />
+                      <span className="ml-3 text-base font-medium text-gray-900">
+                        {item.name}
+                      </span>
                     </a>
                   ))}
                 </nav>
@@ -368,6 +408,5 @@ export default function Nav() {
         </Popover.Panel>
       </Transition>
     </Popover>
-  )
+  );
 }
-
