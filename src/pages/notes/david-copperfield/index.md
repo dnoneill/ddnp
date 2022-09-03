@@ -7,6 +7,8 @@ description: |
 manifest: "https://dickensnotes.github.io/dickens-annotations/img/derivatives/iiif/davidcopperfieldtranscription/manifest.json"
 ---
 
+[Link to Mirador](/notes/david-copperfield/mirador)
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet cursus sit amet dictum sit. Aliquam ut porttitor leo a. Sed lectus vestibulum mattis ullamcorper. Nunc lobortis mattis aliquam faucibus purus in massa tempor. Vulputate odio ut enim blandit volutpat maecenas. Lorem ipsum dolor sit amet consectetur adipiscing elit. Ullamcorper malesuada proin libero nunc consequat. Adipiscing enim eu turpis egestas pretium aenean. Placerat in egestas erat imperdiet sed. Interdum consectetur libero id faucibus nisl tincidunt eget. Lacinia at quis risus sed vulputate odio ut. Semper eget duis at tellus at urna condimentum mattis pellentesque.
 
 Ut sem viverra aliquet eget sit. Amet risus nullam eget felis eget nunc. Cum sociis natoque penatibus et magnis dis parturient. Nisi porta lorem mollis aliquam ut porttitor. Commodo odio aenean sed adipiscing diam donec adipiscing. Pretium vulputate sapien nec sagittis aliquam malesuada bibendum. Ac feugiat sed lectus vestibulum. Diam vel quam elementum pulvinar etiam non quam lacus. Malesuada pellentesque elit eget gravida. Facilisis sed odio morbi quis commodo. Varius duis at consectetur lorem donec massa sapien faucibus et. Mattis aliquam faucibus purus in massa tempor nec. Eget egestas purus viverra accumsan in nisl nisi scelerisque eu. Purus in massa tempor nec feugiat nisl. Sed id semper risus in hendrerit gravida rutrum. Molestie nunc non blandit massa enim nec.

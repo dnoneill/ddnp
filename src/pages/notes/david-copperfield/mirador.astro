@@ -3,18 +3,18 @@ import Mirador from "../../../components/Mirador";
 import Nav from "../../../components/Nav";
 
 const manifest =
-    "https://dickensnotes.github.io/dickens-annotations/img/derivatives/iiif/davidcopperfieldtranscription/manifest.json";
+  "https://dickensnotes.github.io/dickens-annotations/img/derivatives/iiif/davidcopperfieldtranscription/manifest.json";
 ---
 
 <html class="h-full">
-    <script>
-        window.global = window;
-    </script>
+  <script>
+    window.global = window;
+  </script>
 
-    <body class="h-full">
-        <Nav client:load />
-        <div class="relative h-[90vh]">
-            <Mirador client:only="react" loadedManifest={manifest} />
-        </div>
-    </body>
+  <body class="h-full">
+    <Nav client:load />
+    <div class="relative h-[90vh]">
+      <Mirador client:only="react" loadedManifest={manifest} />
+    </div>
+  </body>
 </html>
