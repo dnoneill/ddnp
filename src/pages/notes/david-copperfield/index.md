@@ -1,10 +1,10 @@
 ---
-layout: ../../layouts/notes.astro
+layout: ../../../layouts/notes.astro
 title: David Copperfield
 publishDate: 2020-03-02 00:00:00
 description: |
- Working Notes from Dicken's novel David Copperfield. 
-manifest: "https://karenandscott.github.io/annonatate/manifests/iiif/dc/manifest.json"
+  Working Notes from Dicken's novel David Copperfield.
+manifest: "https://dickensnotes.github.io/dickens-annotations/img/derivatives/iiif/davidcopperfieldtranscription/manifest.json"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet cursus sit amet dictum sit. Aliquam ut porttitor leo a. Sed lectus vestibulum mattis ullamcorper. Nunc lobortis mattis aliquam faucibus purus in massa tempor. Vulputate odio ut enim blandit volutpat maecenas. Lorem ipsum dolor sit amet consectetur adipiscing elit. Ullamcorper malesuada proin libero nunc consequat. Adipiscing enim eu turpis egestas pretium aenean. Placerat in egestas erat imperdiet sed. Interdum consectetur libero id faucibus nisl tincidunt eget. Lacinia at quis risus sed vulputate odio ut. Semper eget duis at tellus at urna condimentum mattis pellentesque.

@@ -61,7 +61,7 @@ const books = [
   {
     name: "Bleak House",
     description: "",
-    href: "#",
+    href: "/notes/bleak-house",
     icon: BookOpenIcon,
   },
 ];
