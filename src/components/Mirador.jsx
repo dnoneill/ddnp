@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import mirador from "mirador";
 import annotationPlugins from "mirador-annotations/es/index";
 import LocalStorageAdapter from "mirador-annotations/es/LocalStorageAdapter";
-import AnnototAdapter from "mirador-annotations/es/AnnototAdapter";
 
 export default function Mirador(props) {
   const config = {
@@ -10,8 +9,10 @@ export default function Mirador(props) {
     annotation: {
       adapter: (canvasId) =>
         new LocalStorageAdapter(`localStorage://?canvasId=${canvasId}`),
-      // adapter: (canvasId) => new AnnototAdapter(canvasId, "localhost:3000"),
       exportLocalStorageAnnotations: true, // display annotation JSON export button,
+    },
+    annotations: {
+      htmlSanitizationRuleSet: "mirador2",
     },
     window: {
       defaultSideBarPanel: "annotations",
