@@ -3,29 +3,21 @@ import { Icon } from "astro-icon";
 const links = [
   {
     href: "/showcase",
-    text: "Showcase",
+    text: "Introduction",
   },
   {
     href: "https://docs.astro.build",
-    text: "Docs",
+    text: "Using the DDNP",
   },
   {
     href: "/themes",
-    text: "Themes",
+    text: "The Working Notes",
   },
   {
     href: "/integrations",
-    text: "Integrations",
-  },
-  {
-    href: "/blog",
-    text: "Blog",
+    text: "About the Project",
   },
 ];
-const formatter = Intl.NumberFormat("en", {
-  notation: "compact",
-  maximumFractionDigits: 1,
-});
 ---
 
 <script>
@@ -42,7 +34,7 @@ const formatter = Intl.NumberFormat("en", {
 </script>
 
 <header id="navheader" class="fixed top-0 left-0 right-0 z-20">
-  <div class="bg-neutral-900 text-neutral-400 py-4">
+  <div class="bg-white text-slate-900 py-4">
     <nav
       class="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6"
       aria-label="Global"
@@ -51,11 +43,11 @@ const formatter = Intl.NumberFormat("en", {
         <div class="flex items-center justify-between w-full md:w-auto -m-2">
           <a
             href="/"
-            class="flex gap-x-1 text-neutral-50 font-semibold text-xl"
+            class="flex gap-x-1 text-slate-900 font-semibold text-xl"
             id="navlogo"
           >
             <Icon
-              name="full-logo-dark"
+              name="DickensNotesSide"
               height={32}
               class="-mb-1"
               aria-hidden="true"
@@ -66,7 +58,7 @@ const formatter = Intl.NumberFormat("en", {
             <button
               type="button"
               id="menubtn"
-              class="rounded-md p-2 inline-flex items-center justify-center hover:bg-neutral-600 hover:text-neutral-100 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-neutral-50"
+              class="rounded-md p-2 inline-flex items-center justify-center hover:bg-white hover:text-slate-900 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-neutral-50"
               aria-expanded="false"
             >
               <span class="sr-only">Open main menu</span>
@@ -87,7 +79,7 @@ const formatter = Intl.NumberFormat("en", {
             links.map(({ href, text }) => (
               <a
                 href={href}
-                class="text-base text-neutral-50 hover:text-neutral-300"
+                class="text-base text-slate-900 hover:text-slate-800"
               >
                 {text}
               </a>
@@ -105,7 +97,7 @@ const formatter = Intl.NumberFormat("en", {
       @apply hidden;
     }
     header.open {
-      @apply bg-neutral-900;
+      @apply bg-white;
     }
   }
 </style>
