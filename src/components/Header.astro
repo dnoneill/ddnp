@@ -2,19 +2,19 @@
 import { Icon } from "astro-icon";
 const links = [
   {
-    href: "/showcase",
+    href: "/introductionn/general",
     text: "Introduction",
   },
   {
-    href: "https://docs.astro.build",
+    href: "#",
     text: "Using the DDNP",
   },
   {
-    href: "/themes",
+    href: "/notes/bleak-house",
     text: "The Working Notes",
   },
   {
-    href: "/integrations",
+    href: "#",
     text: "About the Project",
   },
 ];
@@ -28,12 +28,12 @@ const links = [
   if (matchMedia("(pointer:fine)").matches) {
     logo.addEventListener("contextmenu", (event) => {
       event.preventDefault();
-      window.location.href = "/press";
+      window.location.href = "/";
     });
   }
 </script>
 
-<header id="navheader" class="fixed top-0 left-0 right-0 z-20">
+<header id="navheader" class="relative z-10 bg-white">
   <div class="bg-white text-slate-900 py-4">
     <nav
       class="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6"
