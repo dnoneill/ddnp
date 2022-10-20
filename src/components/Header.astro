@@ -33,17 +33,19 @@ const links = [
   }
 </script>
 
-<header id="navheader" class="relative z-10 bg-white">
-  <div class="bg-white text-slate-900 py-4">
+<header id="navheader" class="relative z-10 bg-white border-b-2 min-h-full">
+  <div class="bg-white text-gray-900 py-4">
     <nav
       class="relative max-w-7xl mx-auto flex items-center justify-around sm:justify-between px-4"
       aria-label="Global"
     >
-      <div class="flex flex-col md:flex-row items-center flex-1 gap-y-6">
+      <div
+        class="flex flex-col md:flex-row items-center flex-1 gap-y-6 justify-between"
+      >
         <div class="flex items-center justify-between w-11/12 md:w-3/12">
           <a
             href="/"
-            class="flex gap-x-1 text-slate-900 font-semibold text-xl"
+            class="flex gap-x-1 text-gray-900 font-semibold text-xl"
             id="navlogo"
           >
             <Icon
@@ -58,7 +60,7 @@ const links = [
             <button
               type="button"
               id="menubtn"
-              class="rounded-md p-2 inline-flex items-center justify-center hover:bg-white hover:text-slate-900 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-neutral-50"
+              class="rounded-md p-2 inline-flex items-center justify-center hover:bg-white hover:text-gray-900 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-neutral-50"
               aria-expanded="false"
             >
               <span class="sr-only">Open main menu</span>
@@ -79,7 +81,7 @@ const links = [
             links.map(({ href, text }) => (
               <a
                 href={href}
-                class="text-base text-slate-900 hover:text-slate-800"
+                class="text-base text-gray-900 hover:text-gray-800"
               >
                 {text}
               </a>
