@@ -3,7 +3,7 @@
 import Footer from "../components/Footer";
 import Hero from "../components/Hero.astro";
 import MainHead from "../components/MainHead.astro";
-import Nav from "../components/Nav";
+import Header from "../components/Header.astro";
 import Card from "../components/Card.astro";
 
 const novels = [
@@ -33,7 +33,7 @@ const novels = [
   </head>
 
   <body class="container mx-auto">
-    <Nav client:only="react" />
+    <Header />
     <Hero />
     <section class="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4 space-between">
       {
