@@ -1,21 +1,101 @@
 ---
 import { Icon } from "astro-icon";
+import NavPopover from "./NavPopover";
+import {
+  PencilIcon,
+  MenuIcon,
+  XIcon,
+  BookOpenIcon,
+  GlobeIcon,
+  InformationCircleIcon,
+  AcademicCapIcon,
+  FolderIcon,
+} from "@heroicons/react/outline/index.js";
+
+const introductionOptions = [
+  {
+    name: "General Introduction",
+    description: "",
+    href: "/introduction/general",
+    icon: BookOpenIcon,
+  },
+  {
+    name: "Scholarly Introduction",
+    description: "",
+    href: "#",
+    icon: AcademicCapIcon,
+  },
+];
+const aboutOptions = [
+  {
+    name: "The Team",
+    description: "",
+    href: "#",
+    icon: GlobeIcon,
+  },
+  {
+    name: "Editing the Notes",
+    description: "",
+    href: "#",
+    icon: PencilIcon,
+  },
+  {
+    name: "Colophon/Technical",
+    description: "",
+    href: "#",
+    icon: InformationCircleIcon,
+  },
+];
+const bookOptions = [
+  {
+    name: "David Copperfield",
+    description: "",
+    href: "/notes/david-copperfield",
+    icon: BookOpenIcon,
+  },
+  {
+    name: "Bleak House",
+    description: "",
+    href: "/notes/bleak-house",
+    icon: BookOpenIcon,
+  },
+];
+
+const instructionOptions = [
+  {
+    name: "User Guide",
+    description: "Learn how to use the DDNP to explore Dicken's working notes",
+    href: "#",
+    icon: FolderIcon,
+  },
+  {
+    name: "Teaching with the DDNP",
+    description: "Learn to incorporate the DDNP into your teaching process",
+    href: "#",
+    icon: AcademicCapIcon,
+  },
+];
+
 const links = [
   {
-    href: "/introductionn/general",
+    href: "/introduction/general",
     text: "Introduction",
+    options: introductionOptions,
   },
   {
     href: "#",
     text: "Using the DDNP",
+    options: instructionOptions,
   },
   {
     href: "/notes/bleak-house",
     text: "The Working Notes",
+    options: bookOptions,
   },
   {
     href: "#",
     text: "About the Project",
+    options: aboutOptions,
   },
 ];
 ---
@@ -78,13 +158,8 @@ const links = [
           class="flex flex-col sm:flex-row gap-x-8 gap-y-4 sm:ml-10 text-center sm:text-left sm:pb-0"
         >
           {
-            links.map(({ href, text }) => (
-              <a
-                href={href}
-                class="text-base text-gray-700 hover:text-gray-900 p-2 focus:ring-2 focus:ring-inset focus:ring-ddnpblue"
-              >
-                {text}
-              </a>
+            links.map(({ text, options }) => (
+              <NavPopover title={text} options={options} client:load />
             ))
           }
         </div>
