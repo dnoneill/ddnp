@@ -1,6 +1,6 @@
 ---
 import Mirador from "../../../components/Mirador";
-import Nav from "../../../components/Nav";
+import Header from "../../../components/Header.astro";
 
 const manifest =
   "https://dickensnotes.github.io/dickens-annotations/img/derivatives/iiif/bleakhousetranscriptions/manifest.json";
@@ -12,7 +12,7 @@ const manifest =
   </script>
 
   <body class="h-full">
-    <Nav client:load />
+    <Header />
     <div class="relative h-[90vh]">
       <Mirador client:only="react" loadedManifest={manifest} />
     </div>
