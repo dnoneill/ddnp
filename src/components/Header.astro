@@ -1,0 +1,180 @@
+---
+import { Icon } from "astro-icon";
+import NavPopover from "./NavPopover";
+import {
+  PencilIcon,
+  MenuIcon,
+  XIcon,
+  BookOpenIcon,
+  GlobeIcon,
+  InformationCircleIcon,
+  AcademicCapIcon,
+  FolderIcon,
+} from "@heroicons/react/outline/index.js";
+
+const introductionOptions = [
+  {
+    name: "General Introduction",
+    description: "",
+    href: "/introduction/general",
+    icon: BookOpenIcon,
+  },
+  {
+    name: "Scholarly Introduction",
+    description: "",
+    href: "#",
+    icon: AcademicCapIcon,
+  },
+];
+const aboutOptions = [
+  {
+    name: "The Team",
+    description: "",
+    href: "#",
+    icon: GlobeIcon,
+  },
+  {
+    name: "Editing the Notes",
+    description: "",
+    href: "#",
+    icon: PencilIcon,
+  },
+  {
+    name: "Colophon/Technical",
+    description: "",
+    href: "#",
+    icon: InformationCircleIcon,
+  },
+];
+const bookOptions = [
+  {
+    name: "David Copperfield",
+    description: "",
+    href: "/notes/david-copperfield",
+    icon: BookOpenIcon,
+  },
+  {
+    name: "Bleak House",
+    description: "",
+    href: "/notes/bleak-house",
+    icon: BookOpenIcon,
+  },
+];
+
+const instructionOptions = [
+  {
+    name: "User Guide",
+    description: "Learn how to use the DDNP to explore Dicken's working notes",
+    href: "#",
+    icon: FolderIcon,
+  },
+  {
+    name: "Teaching with the DDNP",
+    description: "Learn to incorporate the DDNP into your teaching process",
+    href: "#",
+    icon: AcademicCapIcon,
+  },
+];
+
+const links = [
+  {
+    href: "/introduction/general",
+    text: "Introduction",
+    options: introductionOptions,
+  },
+  {
+    href: "#",
+    text: "Using the DDNP",
+    options: instructionOptions,
+  },
+  {
+    href: "/notes/bleak-house",
+    text: "The Working Notes",
+    options: bookOptions,
+  },
+  {
+    href: "#",
+    text: "About the Project",
+    options: aboutOptions,
+  },
+];
+---
+
+<script>
+  const header = document.getElementById("navheader");
+  const menuBtn = document.getElementById("menubtn");
+  const logo = document.getElementById("navlogo");
+  menuBtn.onclick = () => header.classList.toggle("open");
+  if (matchMedia("(pointer:fine)").matches) {
+    logo.addEventListener("contextmenu", (event) => {
+      event.preventDefault();
+      window.location.href = "/";
+    });
+  }
+</script>
+
+<header id="navheader" class="relative z-10 bg-white border-b-2">
+  <div class="bg-white text-gray-900 py-4">
+    <nav
+      class="relative max-w-7xl mx-auto flex items-center justify-around sm:justify-between px-4"
+      aria-label="Global"
+    >
+      <div
+        class="flex flex-col md:flex-row items-center flex-1 gap-y-6 justify-between"
+      >
+        <div class="flex items-center justify-between w-11/12 md:w-3/12">
+          <a
+            href="/"
+            class="flex gap-x-1 text-gray-900 font-semibold text-xl"
+            id="navlogo"
+          >
+            <Icon
+              name="DickensNotesSide"
+              height={32}
+              class="-mb-1 md:h-auto md:w-36"
+              aria-hidden="true"
+            />
+            <span class="sr-only">Digital Dickens Notes Project</span>
+          </a>
+          <div class="-mr-2 sm:-mr-6 flex items-center md:hidden">
+            <button
+              type="button"
+              id="menubtn"
+              class="rounded-md p-2 inline-flex items-center justify-center hover:bg-white hover:text-gray-900 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-neutral-50"
+              aria-expanded="false"
+            >
+              <span class="sr-only">Open main menu</span>
+              <Icon
+                pack="heroicons-outline"
+                name="menu"
+                size={24}
+                aria-hidden="true"
+              />
+            </button>
+          </div>
+        </div>
+        <div
+          id="menu"
+          class="flex flex-col sm:flex-row gap-x-8 gap-y-4 sm:ml-10 text-center sm:text-left sm:pb-0"
+        >
+          {
+            links.map(({ text, options }) => (
+              <NavPopover title={text} options={options} client:load />
+            ))
+          }
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<style>
+  @media (max-width: 768px) {
+    header:not(.open) :is(#menu) {
+      @apply hidden;
+    }
+    header.open {
+      @apply bg-white;
+    }
+  }
+</style>
