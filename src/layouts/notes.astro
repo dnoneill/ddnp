@@ -14,7 +14,10 @@ const { content } = Astro.props;
   <body class="container mx-auto">
     <Header />
     <div class="prose px-4 sm:px-6 mx-auto">
-      <h1 class="prose text-4xl mt-6">{content.title}</h1>
+      <h1 class="prose text-4xl mt-6 text-gray-800">{content.title}</h1>
+      <p class="prose">
+        <span class="italic">Lead editor: {content.editor}</span>
+      </p>
       <div class="prose mt-6">
         <slot />
       </div>
