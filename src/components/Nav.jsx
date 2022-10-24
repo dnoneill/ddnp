@@ -69,13 +69,13 @@ const books = [
 const instructionOptions = [
   {
     name: "User Guide",
-    description: "Learn how to use the DDNP to explore Dicken's working notes",
+    description: "Learn how to use the DDNP to explore Dickens's Working Notes",
     href: "#",
     icon: FolderIcon,
   },
   {
     name: "Teaching with the DDNP",
-    description: "Learn to incorporate the DDNP into your teaching process",
+    description: "Learn to incorporate the DDNP into your teaching practice",
     href: "#",
     icon: AcademicCapIcon,
   },
