@@ -1,0 +1,16 @@
+---
+import Header from "../components/Header.astro";
+---
+
+<html class="h-full">
+  <script>
+    window.global = window;
+  </script>
+
+  <body class="h-full">
+    <Header />
+    <div class="relative h-[90vh]">
+      <slot />
+    </div>
+  </body>
+</html>
