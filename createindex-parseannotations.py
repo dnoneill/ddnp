@@ -69,7 +69,13 @@ def main():
 		if '-list.json' not in items['filename']:
 			jsoncontent = items['json']
 			searchfields = get_search(jsoncontent)
-			searchfields['searchfields']['url'] = jsoncontent['on'][0]['full']
+			canvas =jsoncontent['on'][0]['full']
+			if 'bleakhousetranscriptions' in canvas:
+				url =  "https://main--tubular-narwhal-84b42b.netlify.app/notes/bleak-house/mirador"
+			else:
+				url = "https://main--tubular-narwhal-84b42b.netlify.app/notes/david-copperfield/mirador/"
+			url += '?canvas={}'.format(canvas)
+			searchfields['searchfields']['url'] = url
 			allsearchfields.append(searchfields)
 
 	docs = {}

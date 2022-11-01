@@ -4,6 +4,9 @@ import annotationPlugins from "mirador-annotations/es/index";
 import LocalStorageAdapter from "mirador-annotations/es/LocalStorageAdapter";
 
 export default function Mirador(props) {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const canvas = urlParams.get('canvas');
   const config = {
     id: "mirador",
     annotation: {
@@ -29,6 +32,7 @@ export default function Mirador(props) {
     windows: [
       {
         loadedManifest: `${props.loadedManifest}`,
+        canvasId: canvas
       },
     ],
   };
@@ -38,6 +42,6 @@ export default function Mirador(props) {
   useEffect(() => {
     mirador.viewer(config, plugins);
   });
-
+  
   return <div id="mirador" />;
 }

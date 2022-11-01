@@ -7,21 +7,25 @@ require 'yaml'
 
 # lunr_src = open(@lunr_path).read
 # ctx = ExecJS.compile(lunr_src)
+js_dir = "public/assets/javascript"
 dickensurl = "https://main--tubular-narwhal-84b42b.netlify.app"
 @lunr_config = {'fields' => [{'jekyllfields': ['content'], 'boost': 10, 'searchfield': 'content'}, 
 	{'jekyllfields': ['tags'],'searchfield': 'tags', 'boost': 10}, 
 	{'jekyllfields': ['url'],'searchfield': 'url', 'boost': 1}, 
-	{'jekyllfields': ['title'],'searchfield': 'title', 'boost': 20}], 
+	{'jekyllfields': ['title'],'searchfield': 'title', 'boost': 20},
+	{'jekyllfields': ['type'],'searchfield': 'type', 'boost': 1, 'facetfield': true},
+	], 
 	'fuzzysearchfields' => ['content'],
 	'displayfields' => [{'field': 'title', 'headerfield': true, 'highlight': false},
-		{'field': 'tags', 'label': 'Tags'}
-	]
+		{'field': 'tags', 'label': 'Tags'},{'field': 'type', 'label': 'Type'}
+	],
+	'atozsortfield': 'title'
 }
-stdout_str, status = Open3.capture2('python3 parseannotations.py')
+stdout_str, status = Open3.capture2('python3 createindex-parseannotations.py')
 
 annotationcontents = JSON.parse(stdout_str)
 docs = annotationcontents
-index_js = open('lunr.js').read
+index_js = open(File.join(js_dir, 'lunr.js')).read
 index_js << 'var idx = lunr(function() {this.pipeline.remove(lunr.stemmer);this.searchPipeline.remove(lunr.stemmer);this.pipeline.remove(lunr.stopWordFilter);this.searchPipeline.remove(lunr.stopWordFilter);this.tokenizer.separator = /[\s,.;:/?!()]+/;'
 @lunr_config['fields'].each do |field|
 	index_js << "this.field('#{field[:searchfield]}', {'boost': #{field[:boost]}});"
@@ -36,22 +40,22 @@ Dir['src/pages/**/*.mdx'].each do |page|
 	striphtml = stripmarkdown.gsub(/<\/?[^>]*>/, "")
 	slug = page.gsub('src/pages', '').gsub('.mdx', '').gsub('index', '')
 	url = dickensurl + slug
-	docs[slug] = {'url' => url, 'content' => striphtml, 'title' => headercontent['title']}
+	docs[slug] = {'url' => url, 'content' => striphtml, 'title' => headercontent['title'], 'type' => 'Website'}
 end
 docs.each do |key, doc|
 	doc['content'] = doc['content'].gsub(/<\/?[^>]*>/, "").gsub('\\n', ' ')
 	doc['id'] = key
-	doc['title'] = doc['title'] ? doc['title'] : key
+	doc['title'] = doc['title'] ? doc['title'] : doc['content'].gsub(/<\/?[^>]*>/, "").split("\n")[0].strip()
 	doc['tags'] = doc['tags'] ? doc['tags'] : ''
-
+	doc['type'] = doc['type'] ? doc['type'] : 'Annotation'
+	doc['excerpt'] =  doc['content'].gsub(/<\/?[^>]*>/, "").gsub('\\n', ' ')
 	index_js << 'this.add(' << ::JSON.generate(doc, quirks_mode: true) << ');'
 end
 index_js << '});'
-#puts index_js.inspect
 
-filename = File.join('.', 'index.js')
+filename = File.join(js_dir, 'index.js')
 ctx = ExecJS.compile(index_js)
 index = ctx.eval('JSON.stringify(idx)')
-total = "var docs = #{docs.to_json}\nvar index = #{index.to_json}\nvar baseurl = '#{dickensurl}'\nvar lunr_settings = #{@lunr_config.to_json}"
+total = "var docs = #{docs.to_json}\nvar index = #{index.to_json}\nvar baseurl = ''\nvar lunr_settings = #{@lunr_config.to_json}"
 
 File.open(filename, "w") { |f| f.write(total) }
