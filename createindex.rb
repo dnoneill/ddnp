@@ -54,13 +54,15 @@ Dir['textfiles/**/*.*'].each do |page|
 	filename = page.split('/').last.gsub('.txt', '')
 	puts filename.inspect
 	if page.include?('BH')
+		contenttype = 'Bleak House Working Notes'
 		url = "/notes/bleak-house/mirador?canvas=https://dickensnotes.github.io/dickens-annotations/canvas/img/derivatives/iiif/bleakhousetranscriptions/#{filename.gsub('_', '')}.json"
 	else
+		contenttype = 'David Copperfield Working Notes'
 		url = "/notes/david-copperfield/mirador?canvas=https://dickensnotes.github.io/dickens-annotations/canvas/img/derivatives/iiif/davidcopperfieldtranscription/#{filename.gsub('_', '')}.json"
 	end
-	title = filename.gsub('BH', 'Bleak House').gsub('DC', 'David Cooperfield').gsub('WN', 'Working Notes').gsub('_', ' ')
+	title = filename.gsub('BH', 'Bleak House').gsub('DC', 'David Copperfield').gsub('WN', 'Working Notes').gsub('_', ' ')
 	#puts content.inspect
-	docs[filename] = {'url' => url, 'content' => content, 'title' => title, 'type' => 'Working Notes'}
+	docs[filename] = {'url' => url, 'content' => content, 'title' => title, 'type' => contenttype}
 end
 docs.each do |key, doc|
 	doc['content'] = doc['content'].gsub(/<\/?[^>]*>/, "").gsub('\\n', ' ')
