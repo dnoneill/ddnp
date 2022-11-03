@@ -72,10 +72,10 @@ def main():
 			canvas =jsoncontent['on'][0]['full']
 			if 'bleakhousetranscriptions' in canvas:
 				url =  "/notes/bleak-house/mirador"
-				contenttype = 'Bleak House Annotation'
+				contenttype = 'Annotations: Bleak House'
 			else:
 				url = "/notes/david-copperfield/mirador/"
-				contenttype = 'David Copperfield Annotation'
+				contenttype = 'Annotations: David Copperfield'
 			url += '?canvas={}'.format(canvas)
 			searchfields['searchfields']['url'] = url
 			searchfields['searchfields']['type'] = contenttype
