@@ -6,13 +6,13 @@ import LocalStorageAdapter from "mirador-annotations/es/LocalStorageAdapter";
 export default function Mirador(props) {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
-  const canvas = urlParams.get('canvas');
+  const canvas = urlParams.get("canvas");
   const config = {
     id: "mirador",
     annotation: {
       adapter: (canvasId) =>
         new LocalStorageAdapter(`localStorage://?canvasId=${canvasId}`),
-      exportLocalStorageAnnotations: true, // display annotation JSON export button,
+      exportLocalStorageAnnotations: false, // display annotation JSON export button,
     },
     annotations: {
       htmlSanitizationRuleSet: "mirador2",
@@ -23,6 +23,9 @@ export default function Mirador(props) {
       highlightAllAnnotations: true,
       forceDrawAnnotations: true,
     },
+    thumbnailNavigation: {
+      defaultPosition: "far-right",
+    },
     catalog: [
       // {
       //   manifestId:
@@ -32,7 +35,7 @@ export default function Mirador(props) {
     windows: [
       {
         loadedManifest: `${props.loadedManifest}`,
-        canvasId: canvas
+        canvasId: canvas,
       },
     ],
   };
@@ -40,8 +43,8 @@ export default function Mirador(props) {
   const plugins = [...annotationPlugins];
 
   useEffect(() => {
-    mirador.viewer(config, plugins);
+    mirador.viewer(config);
   });
-  
+
   return <div id="mirador" />;
 }
