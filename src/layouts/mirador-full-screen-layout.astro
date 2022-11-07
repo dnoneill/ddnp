@@ -1,11 +1,17 @@
 ---
 import Header from "../components/Header.astro";
+import MainHead from "../components/MainHead.astro";
+
+const { content } = Astro.props;
 ---
 
 <html class="h-full">
-  <script>
-    window.global = window;
-  </script>
+  <head>
+    <MainHead title={content.title} description={content.description} />
+    <script>
+      window.global = window;
+    </script>
+  </head>
 
   <body class="h-full">
     <Header />

@@ -1,6 +1,9 @@
 ---
-import '../styles/global.scss';
-const { title = 'Digital Dickens Notes Project', description = "The Digital Dickens Notes Project is an exploration of Dickens's working notes" } = Astro.props;
+import "../styles/global.scss";
+const {
+  title = "Digital Dickens Notes Project",
+  description = "The Digital Dickens Notes Project is an exploration of Dickens's working notes",
+} = Astro.props;
 ---
 
 <meta charset="UTF-8" />
@@ -8,7 +11,15 @@ const { title = 'Digital Dickens Notes Project', description = "The Digital Dick
 <meta name="viewport" content="width=device-width" />
 <title>{title}</title>
 
-<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700;900&display=swap" rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700;900&display=swap"
+  rel="stylesheet"
+/>
+
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+<link rel="icon" href="favicon.ico" sizes="any" /><!-- 32×32 -->
+<link rel="icon" href="icon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" /><!-- 180×180 -->
+<link rel="manifest" href="site.webmanifest" />
