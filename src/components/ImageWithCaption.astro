@@ -1,8 +1,12 @@
 ---
-const { src, alt, caption } = Astro.props;
+const { src, alt, caption, isVA } = Astro.props;
 ---
 
 <figure>
-  <img src={src} alt={alt} class="shadow-md mx-auto" />
+  <img
+    src={src}
+    alt={alt}
+    class:list={["shadow-md mx-auto", isVA && "max-h-[768px]"]}
+  />
   <figcaption class="italic text-center">{caption}</figcaption>
 </figure>
