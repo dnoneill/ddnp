@@ -1,7 +1,7 @@
 ---
 layout: "../../layouts/page.astro"
 title: "Search site"
-description: "search"
+description: "Users can search the Working Notes, annotations, and content of the Digital Dickens Notes Project."
 ---
 
 <form role="search">
