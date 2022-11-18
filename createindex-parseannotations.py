@@ -77,6 +77,7 @@ def main():
 				url = "/notes/david-copperfield/mirador/"
 				contenttype = 'Annotations: David Copperfield'
 			url += '?canvas={}'.format(canvas)
+			url += '&annotationid={}'.format(jsoncontent['@id'])
 			searchfields['searchfields']['url'] = url
 			searchfields['searchfields']['type'] = contenttype
 			allsearchfields.append(searchfields)

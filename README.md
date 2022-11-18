@@ -21,6 +21,11 @@ The general process will be this:
 5. In Github, create PR from your working branch.
 6. Merge the PR when you're ready.
 
+## Viewing Specific Annotation in Mirador
+You can view a specific annotation by populating the canvas and annotationid property. The annotationid should match the `id` field in the annotation. The canvas should direct mirador to the correct canvas (image) that the annotation is on. 
+For example:
+[https://tubular-narwhal-84b42b.netlify.app/notes/bleak-house/mirador/?canvas=https://dickensnotes.github.io/dickens-annotations/canvas/img/derivatives/iiif/bleakhousetranscriptions/BHWN04.json&annotationid=00547443-abdb-4f41-bb6b-c3a0cf5076cf.json](https://tubular-narwhal-84b42b.netlify.app/notes/bleak-house/mirador/?canvas=https://dickensnotes.github.io/dickens-annotations/canvas/img/derivatives/iiif/bleakhousetranscriptions/BHWN04.json&annotationid=00547443-abdb-4f41-bb6b-c3a0cf5076cf.json)
+
 ## Running the DDNP locally
 
 The DDNP is built on [Astro](https://astro.build/), uses [TailwindCSS](https://tailwindcss.com/) for styling, and several [React](https://reactjs.org/) libraries, including [Mirador](https://projectmirador.org/).

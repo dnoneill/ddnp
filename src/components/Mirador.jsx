@@ -7,6 +7,7 @@ export default function Mirador(props) {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const canvas = urlParams.get("canvas");
+  const annotationid = urlParams.get('annotationid');
   const config = {
     id: "mirador",
     annotation: {
@@ -44,6 +45,11 @@ export default function Mirador(props) {
 
   useEffect(() => {
     mirador.viewer(config);
+    if (annotationid){
+      setTimeout(() => {
+        document.querySelector(`[annotationid="${annotationid}"]`).click();
+      }, "2000");
+    }
   });
 
   return <div id="mirador" />;
