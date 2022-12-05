@@ -2,16 +2,21 @@
 const { image, altText, name, role } = Astro.props;
 ---
 
-<section class="flex gap-6 justify-between items-center">
-  <img
-    class="object-cover max-w-[10rem] shadow-md rounded-md"
-    src={image}
-    alt={altText}
-  />
-  <div class="flex items-center flex-col">
-    <p>
-      <span class="font-bold">{name}</span> - <span class="italic">{role}</span>
-    </p>
-    <slot />
+<section>
+  <p class="text-lg">
+    <span class="font-bold">{name}</span> - <span class="italic">{role}</span>
+  </p>
+
+  <div class="flex gap-6 justify-between -mt-4">
+    <div>
+      <img
+        class="max-w-[10rem] h-auto shadow-md rounded-md"
+        src={image}
+        alt={altText}
+      />
+    </div>
+    <div class="">
+      <slot />
+    </div>
   </div>
 </section>
