@@ -8,14 +8,10 @@ const { image, altText, name, role } = Astro.props;
   </p>
 
   <div class="flex gap-6 justify-between -mt-4">
-    <div>
-      <img
-        class="max-w-[10rem] h-auto shadow-md rounded-md"
-        src={image}
-        alt={altText}
-      />
+    <div class="max-w-[10rem]">
+      <img class="h-auto shadow-md rounded-md" src={image} alt={altText} />
     </div>
-    <div class="">
+    <div class="sm:mt-[0.75em]">
       <slot />
     </div>
   </div>
