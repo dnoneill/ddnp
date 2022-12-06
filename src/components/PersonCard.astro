@@ -1,0 +1,26 @@
+---
+const { imagePath, altText, image, name, role } = Astro.props;
+---
+
+<section>
+  <p class="text-lg">
+    <span class="font-bold">{name}</span> - <span class="italic">{role}</span>
+  </p>
+
+  <div class="flex gap-6 justify-between -mt-4">
+    {
+      image && (
+        <div class="max-w-[10rem]">
+          <img
+            class="h-auto shadow-md rounded-md"
+            src={imagePath}
+            alt={altText}
+          />
+        </div>
+      )
+    }
+    <div class="sm:mt-[0.75em]">
+      <slot />
+    </div>
+  </div>
+</section>
