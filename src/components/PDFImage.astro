@@ -1,0 +1,12 @@
+---
+const { src, alt, caption, pdfPath } = Astro.props;
+---
+
+<a href={pdfPath} class="mx-auto">
+  <figure class="flex gap-6 items-center justify-center">
+    <img src={src} alt={alt} class="w-48 shadow-md mx-auto" />
+    <figcaption class="italic text-center max-w-[50%] text-base">
+      {caption}
+    </figcaption>
+  </figure>
+</a>
