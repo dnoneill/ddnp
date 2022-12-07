@@ -8,7 +8,6 @@ require 'yaml'
 # lunr_src = open(@lunr_path).read
 # ctx = ExecJS.compile(lunr_src)
 js_dir = "public/assets/javascript"
-dickensurl = "https://main--tubular-narwhal-84b42b.netlify.app"
 dickensurl = ""
 
 @lunr_config = {'fields' => [{'jekyllfields': ['content'], 'boost': 10, 'searchfield': 'content'}, 
