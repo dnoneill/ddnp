@@ -11,7 +11,7 @@ const { content } = Astro.props;
     <MainHead title={content.title} description={content.description} />
   </head>
 
-  <body class="container mx-auto">
+  <body class="container mx-auto flex flex-col h-screen justify-between">
     <Header />
     <div
       class="prose px-4 sm:px-6 prose-a:underline prose-a:decoration-ddnpblue prose-a:underline-offset-4 mx-auto"
