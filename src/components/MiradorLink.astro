@@ -10,9 +10,9 @@ const { link, title, img } = Astro.props;
     class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2 justify-center h-full px-2 bg-ddnpblue/10 rounded-md text-center"
   >
     <div class="w-full sm:w-1/2">
-      <p class="w-full text-2xl font-semibold text-gray-800">
+      <h2 class="w-full text-2xl font-semibold text-gray-800">
         Explore the Notes
-      </p>
+      </h2>
       <p
         class="w-full text-sm tracking-wide leading-tight text-gray-800 md:pb-4"
       >
@@ -37,6 +37,7 @@ const { link, title, img } = Astro.props;
       <img
         class="flex-1 w-full h-auto rounded-md border border-gray-200 my-4"
         src={img}
+        alt="Image of Working Notes page"
       />
     </div>
   </div>
