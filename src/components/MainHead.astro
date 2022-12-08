@@ -5,7 +5,8 @@ const {
   description = "The Digital Dickens Notes Project is an exploration of Dickens's working notes",
   twitterTitle = "Digital Dickens Notes Project",
   twitterDescription = "The Digital Dickens Notes Project is an exploration of Dickens's working notes",
-  twitterImage = "/icon.svg",
+  twitterImage = "/images/twitterlogo.jpg",
+  twitterImageAlt = "Image of the Digital Dickens Notes Project logo",
 } = Astro.props;
 ---
 
@@ -27,11 +28,12 @@ const {
 <link rel="icon" href="/icon.svg" type="image/svg+xml" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:card" content="summary" />
 <!-- <meta name="twitter:site" content="" /> -->
 <meta name="twitter:title" content={twitterTitle} />
 <meta name="twitter:description" content={twitterDescription} />
 <meta name="twitter:image" content={twitterImage} />
+<meta name="twitter:image:alt" content={twitterImageAlt} />
 
 <meta property="og:type" content="website" />
 <meta property="og:title" content={twitterTitle} />
