@@ -2,29 +2,30 @@
 import { Icon } from "astro-icon";
 import NavPopover from "./NavPopover";
 import {
-  PencilIcon,
-  MenuIcon,
-  XIcon,
-  BookOpenIcon,
-  GlobeIcon,
-  InformationCircleIcon,
-  AcademicCapIcon,
-  FolderIcon,
-} from "@heroicons/react/outline/index.js";
+  faGears,
+  faFeatherPointed,
+  faBook,
+  faGraduationCap,
+  faPeopleGroup,
+  faPenToSquare,
+  faBookOpen,
+  faPersonChalkboard,
+  faMagnifyingGlass,
+} from "@fortawesome/free-solid-svg-icons";
 
 const introductionOptions = [
   {
     name: "General Introduction",
     description: "What are the Working Notes? What is the DDNP?",
     href: "/introduction/general",
-    icon: BookOpenIcon,
+    icon: faBookOpen,
   },
   {
     name: "Scholarly Introduction",
     description:
       "Understand the significance of the Working Notes and serial process",
     href: "/introduction/scholarly",
-    icon: AcademicCapIcon,
+    icon: faGraduationCap,
   },
 ];
 const aboutOptions = [
@@ -32,26 +33,26 @@ const aboutOptions = [
     name: "The Team",
     description: "Meet the people and institutions behind the DDNP",
     href: "/about/team",
-    icon: GlobeIcon,
+    icon: faPeopleGroup,
   },
   {
     name: "Editing the Notes",
     description:
       "Explore our editorial, transcription, and annotation practices",
     href: "/about/editing-the-notes",
-    icon: PencilIcon,
+    icon: faPenToSquare,
   },
   {
     name: "Colophon/Technical",
     description: "Peek under the hood",
     href: "/about/colophon",
-    icon: InformationCircleIcon,
+    icon: faGears,
   },
   {
     name: "Bibliography",
     description: "Consult additional resources about Dickens and serial form",
     href: "/about/bibliography",
-    icon: InformationCircleIcon,
+    icon: faBook,
   },
 ];
 const bookOptions = [
@@ -60,20 +61,20 @@ const bookOptions = [
     description:
       "Access the Working Notes, annotations, and critical introduction",
     href: "/notes/bleak-house",
-    icon: BookOpenIcon,
+    icon: faFeatherPointed,
   },
   {
     name: "David Copperfield",
     description:
       "Access the Working Notes, annotations, and critical introduction",
     href: "/notes/david-copperfield",
-    icon: BookOpenIcon,
+    icon: faFeatherPointed,
   },
   {
     name: "Additional Working Notes",
     description: "See what's coming next and previews of new transcriptions",
     href: "/notes/additional-working-notes",
-    icon: BookOpenIcon,
+    icon: faFeatherPointed,
   },
 ];
 
@@ -82,20 +83,20 @@ const instructionOptions = [
     name: "User Guide",
     description: "Learn how to use the DDNP",
     href: "/usage/guide",
-    icon: FolderIcon,
+    icon: faBook,
   },
   {
     name: "Teaching with the DDNP",
     description: "Incorporate the DDNP into your classes",
     href: "/usage/teaching",
-    icon: AcademicCapIcon,
+    icon: faPersonChalkboard,
   },
   {
     name: "Search the DDNP",
     description:
       "Search the annotations, transcriptions, and pages of the DDNP",
     href: "/search",
-    icon: AcademicCapIcon,
+    icon: faMagnifyingGlass,
   },
 ];
 

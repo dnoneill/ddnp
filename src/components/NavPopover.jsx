@@ -3,6 +3,7 @@
 import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/solid/index.js";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -46,10 +47,15 @@ export default function NavPopover({ title, options }) {
                       href={item.href}
                       className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"
                     >
-                      {/* <item.icon
-                      className="flex-shrink-0 h-6 w-6 text-ddnpblue"
-                      aria-hidden="true"
-                    /> */}
+                      <div
+                        className="flex-shrink-0 h-8 w-8 text-ddnpblue"
+                        aria-hidden="true"
+                      >
+                        <FontAwesomeIcon
+                          icon={item.icon}
+                          className="align-middle"
+                        />
+                      </div>
                       <div className="ml-4">
                         <p className="text-base font-medium text-gray-900">
                           {item.name}
