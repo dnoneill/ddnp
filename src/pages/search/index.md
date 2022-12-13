@@ -1,15 +1,16 @@
 ---
 layout: "../../layouts/page.astro"
-title: "Search site"
+title: "Search the DDNP"
 description: "Users can search the Working Notes, annotations, and content of the Digital Dickens Notes Project."
 ---
 
 <form role="search">
-<div class="search-control">
+<div class="search-control mb-6">
     <input type="search" id="person-serarch" name="query"
            placeholder="Keyword Search"
-           aria-label="Search people using keyword">
-    <button class="custom_button" style="float: right;">Search</button>
+           aria-label="Search people using keyword"
+           class="p-2 border border-gray-300 outline-offset-0 rounded-md">
+    <button class="custom_button border border-ddnpblue rounded-md p-2 hover:bg-ddnpblue/5 font-medium shadow-sm">Search</button>
 </div>
 </form>
 <script src="https://dnoneill.github.io/jekyll-lunr-js-custom-search/js/custom-search.js"></script>
