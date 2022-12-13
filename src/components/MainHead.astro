@@ -3,11 +3,15 @@ import "../styles/global.scss";
 const {
   title = "Digital Dickens Notes Project",
   description = "The Digital Dickens Notes Project is an exploration of Dickens's working notes",
+  twitterTitle = "Digital Dickens Notes Project",
+  twitterDescription = "The Digital Dickens Notes Project is an exploration of Dickens's working notes",
+  twitterImage = "https://ddnp-git-sb-add-og-and-twitter-meta-ddnp.vercel.app/images/twitter_cards/Home-with-logo.jpg",
+  twitterImageAlt = "Image of Dickens' Dream with Digital Dickens Notes Project logo",
 } = Astro.props;
 ---
 
 <meta charset="UTF-8" />
-<meta name="description" property="og:description" content={description} />
+<meta name="description" content={description} />
 <meta name="viewport" content="width=device-width" />
 <title>{title}</title>
 
@@ -23,3 +27,16 @@ const {
 <link rel="icon" href="/favicon.ico" sizes="any" />
 <link rel="icon" href="/icon.svg" type="image/svg+xml" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<!-- <meta name="twitter:site" content="" /> -->
+<meta name="twitter:title" content={twitterTitle} />
+<meta name="twitter:description" content={twitterDescription} />
+<meta name="twitter:image" content={twitterImage} />
+<meta name="twitter:image:alt" content={twitterImageAlt} />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content={twitterTitle} />
+<meta property="og:description" content={twitterDescription} />
+<meta property="og:url" content="https://www.dickensnotes.com" />
+<meta property="og:image" content={twitterImage} />
