@@ -9,22 +9,24 @@ const { content } = Astro.props;
 <html lang={content.lang || "en"}>
   <head>
     <MainHead title={content.title} description={content.description} />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T6K5MX5Y23"
+    ></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-T6K5MX5Y23");
+    </script>
   </head>
 
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-T6K5MX5Y23"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-T6K5MX5Y23');
-</script>
 
   <body class="container mx-auto flex flex-col h-screen justify-between">
     <Header />
     <div
-      class="prose px-4 sm:px-6 prose-a:underline prose-a:decoration-ddnpblue prose-a:underline-offset-4 mx-auto"
+      class="prose px-4 sm:px-6 prose-a:underline prose-a:decoration-ddnpblue prose-a:underline-offset-4 mx-auto flex-auto"
     >
       <h1 class="prose text-4xl mt-6">{content.title}</h1>
       <div class="prose mt-6">
