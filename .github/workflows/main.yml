@@ -32,5 +32,8 @@ jobs:
         uses: ad-m/github-push-action@v0.6.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main 
-    
+          branch: update-index 
+      - name: create pull request
+        run: gh pr create -B main -H update-index --title 'Update index' --body 'Created by Github action'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
